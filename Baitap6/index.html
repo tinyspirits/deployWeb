@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infomation Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="dataTable">
+        <table id="tableData">
+            <tr>
+                <th> <input type="checkbox" id="selectAllRow" onclick="selectAll()"></th>
+                <th class=" titleRow">Name</th>
+                <th class="titleRow">Phone</th>
+                <th class="titleRow">Email</th>
+                <th class="titleRow">Action</th>
+            </tr>
+        </table>
+        <Button class="buttonProcess" onclick="addRow()">Add</button>
+        <button class="buttonProcess" onclick="deleteRow()">Delete</button>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

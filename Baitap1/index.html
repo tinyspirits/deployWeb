@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Register</title>
+</head>
+
+<body>
+  <h3>Register</h3>
+  <div id="registerForm">
+    <form id="formR">
+      <div class="inputForm">
+        <span>Full name</span>
+        <input class="inputData" id="inputName" onchange="checkInputName()" onkeypress="return this.value.length < 50"
+          type="text" />
+        <span class="labelAlert" id="alertName"></span>
+      </div>
+      <div class="inputForm">
+        <span>Email</span>
+        <input class="inputData" id="inputEmail" type="email" placeholder="name@email.com" onkeypress="checkEmail()" />
+        <span class="labelAlert" id="emailAlert"></span>
+      </div>
+      <div class="inputForm">
+        <span>Phone</span>
+        <input class="inputData" id="inputPhone" type="tel" placeholder="0384413339" onchange="checkPhone()"
+          onkeypress='return event.charCode >= 48 && event.charCode <= 57 && this.value.length<10'></input>
+        <span class="labelAlert" id="alertPhone"></span>
+      </div>
+      <div class="inputForm">
+        <span>Birthday</span>
+        <input class="inputData" id="inputDate" type="text" placeholder="dd/mm/yyyy" onchange="checkDate()"
+          onkeypress="return event.charCode >= 47 && event.charCode <= 57 && this.value.length<=9"></input>
+        <span class="labelAlert" id="dateAlert"></span>
+      </div>
+      <div class="inputForm">
+        <span>Password</span>
+        <input type="password" class="passWord" id="passWord"
+          placeholder="Password 8-30 kí tự, bắt đầu bằng chữ cái, có chứa kí tự đặc biệt, số, chữ viết hoa"
+          onchange="checkPass()" onkeypress="return this.value.length < 30" />
+        <span class="labelAlert" id="alertPassword"></span>
+      </div>
+      <div class="inputForm">
+        <span>Comfirm password</span>
+        <input type="password" class="passWord" id="comfirmPass" onchange="comfirmPassword()" />
+        <span class="labelAlert" id="comfirmAlert"></span>
+      </div>
+      <div class="inputForm" id="image">
+        <img id="imageUpload" src="" alt="" />
+        <div class="centered">Avatar upload</div>
+      </div>
+      <div class="inputForm">
+        <input id="imgLoad" type="file" onchange="imageLoad()" />
+      </div>
+    </form>
+    <div id="buttonProcess">
+      <button id="btnAdd" onclick="addData()">Add</button>
+      <button onclick="functionReset()">Reset</button>
+    </div>
+    <div id="formInfo">
+      <div>
+        <div>
+          <span>Full name:</span>
+          <div class="data"></div>
+        </div>
+        <div>
+          <span>Email:</span>
+          <div class="data"></div>
+        </div>
+        <div>
+          <span>Phone:</span>
+          <div class="data"></div>
+        </div>
+        <div>
+          <span>Birthday:</span>
+          <div class="data"></div>
+        </div>
+
+      </div>
+      <div>
+        <img id="imageAdd" src="" alt="" />
+        <div class="centered">Avatar preview</div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

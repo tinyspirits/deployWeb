@@ -1,0 +1,101 @@
+body {
+  /* width: 100%; */
+  margin: 0;
+  padding: 0;
+}
+h3 {
+  text-align: center;
+}
+#registerForm {
+  /* display: flex; */
+  margin: auto;
+  width: 50%;
+  flex-wrap: wrap;
+}
+
+.inputForm {
+  display: flex;
+}
+.inputForm > * {
+  width: 100%;
+  margin-bottom: 1%;
+}
+.inputForm > span {
+  width: 15%;
+  text-align: center;
+  word-break: keep-all;
+}
+#registerForm button {
+  /* float: left; */
+  /* text-align: center; */
+  margin: auto;
+  /* margin-left: 10%; */
+  width: 20%;
+  height: 50px;
+}
+#buttonProcess {
+  display: flex;
+  /* margin: auto; */
+  justify-content: center;
+}
+.inputData {
+  border: 1px solid gray;
+  border-radius: 1%;
+}
+#image {
+  height: 100px;
+  width: 100px;
+  margin: auto;
+  border-radius: 50%;
+  position: relative;
+  text-align: center;
+}
+#image > #imageUpload {
+  border-radius: 50%;
+  border: 1px solid black;
+}
+#image + .inputForm > input {
+  /* margin: auto; */
+  text-align: center;
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+#formInfo {
+  margin-top: 10%;
+  border: 1px solid black;
+  display: flex;
+  padding: 5%;
+}
+#formInfo > div:first-child {
+  /* float: left; */
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+#formInfo > div:first-child > div {
+  width: 90%;
+  display: flex;
+  margin-bottom: 3%;
+}
+#formInfo > div:first-child > div > span {
+  width: 20%;
+}
+#formInfo > div:last-child {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  /* float: right; */
+  margin-right: 5%;
+  border: 1px solid black;
+  position: relative;
+}
+#formInfo > div:last-child > img {
+  height: 100%;
+  border-radius: 50%;
+}
