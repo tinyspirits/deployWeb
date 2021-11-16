@@ -14,8 +14,8 @@ function selectAll() { //chọn tất cả row
 //check validate
 const nameRegex = /([A-Za-z_]|[<br>])$/gi;
 const phoneRegex = /(0[3|5|7|8|9])+([0-9]{8})\b/;
-const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,})|[<br>])$/;
-
+const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+([a-zA-Z]{2,})+\<br\>))$/;
+const emailRegexNotBr = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+([a-zA-Z]{2,})))$/;
 function checkValidate(regex, text) {
     if (regex.test(text) == true) {
         return true;
@@ -60,7 +60,9 @@ function addRow() {
                     }
                 }
                 if ((titleRow[i - 1].innerHTML == "Email")) {
-                    if (checkValidate(emailRegex, createRowTd.innerHTML) == false) {
+                    if (checkValidate(emailRegex, createRowTd.innerHTML) == true || checkValidate(emailRegexNotBr, createRowTd.innerHTML) == true) {
+                        createRowTd.innerHTML = createRowTd.innerHTML;
+                    } else {
                         alert("Chưa nhập đúng định dạng");
                         createRowTd.innerHTML = "";
                     }
